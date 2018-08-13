@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="1987" started-at="2018-08-13T15:45:15Z" finished-at="2018-08-13T15:45:17Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="1987" started-at="2018-08-13T15:45:15Z" finished-at="2018-08-13T15:45:17Z">
+      <class name="APITesting.com.org.api.localReq">
+        <test-method status="PASS" signature="test1()[pri:0, instance:APITesting.com.org.api.localReq@5e3a8624]" name="test1" duration-ms="1945" started-at="2018-08-13T15:45:15Z" finished-at="2018-08-13T15:45:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+      </class> <!-- APITesting.com.org.api.localReq -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
