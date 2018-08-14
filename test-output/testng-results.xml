@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1987" started-at="2018-08-13T15:45:15Z" finished-at="2018-08-13T15:45:17Z">
+  <suite name="Default suite" duration-ms="1120" started-at="2018-08-14T12:03:07Z" finished-at="2018-08-14T12:03:09Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1987" started-at="2018-08-13T15:45:15Z" finished-at="2018-08-13T15:45:17Z">
+    <test name="Default test" duration-ms="1120" started-at="2018-08-14T12:03:07Z" finished-at="2018-08-14T12:03:09Z">
       <class name="APITesting.com.org.api.localReq">
-        <test-method status="PASS" signature="test1()[pri:0, instance:APITesting.com.org.api.localReq@5e3a8624]" name="test1" duration-ms="1945" started-at="2018-08-13T15:45:15Z" finished-at="2018-08-13T15:45:17Z">
+        <test-method status="PASS" signature="updateByPATCHReq()[pri:0, instance:APITesting.com.org.api.localReq@3bfdc050]" name="updateByPATCHReq" duration-ms="1103" started-at="2018-08-14T17:33:07Z" finished-at="2018-08-14T17:33:09Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
+        </test-method> <!-- updateByPATCHReq -->
       </class> <!-- APITesting.com.org.api.localReq -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

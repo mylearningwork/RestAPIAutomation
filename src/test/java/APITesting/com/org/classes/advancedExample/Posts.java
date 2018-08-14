@@ -1,6 +1,6 @@
 package APITesting.com.org.classes.advancedExample;
 
-public class __Posts {
+public class Posts {
 
 	private String id;
 	private String title;

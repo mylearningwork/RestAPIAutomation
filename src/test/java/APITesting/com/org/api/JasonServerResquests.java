@@ -1,13 +1,10 @@
 package APITesting.com.org.api;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import APITesting.com.org.classes.Info;
 import APITesting.com.org.classes.Posts;
 import APITesting.com.org.classes._Posts;
 import APITesting.com.org.classes.advancedExample._Info;
-import APITesting.com.org.classes.advancedExample.__Posts;
-
 import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.Response;
 import static org.hamcrest.Matchers.lessThan;
@@ -54,7 +51,7 @@ public class JasonServerResquests {
 	public void test_03(){
 
 		Posts posts = new Posts();
-		posts.setId("3");
+		posts.setId(3);
 		posts.setTitle("posts request by object");
 		posts.setAuthor("Vaibhav");
 
@@ -88,7 +85,7 @@ public class JasonServerResquests {
 	//@Test
 	public void test_05(){
 		Posts posts = new Posts();
-		posts.setId("3");
+		posts.setId(3);
 		posts.setAuthor("updated Author name");
 		posts.setTitle("updated Title name");
 		
@@ -169,11 +166,11 @@ public class JasonServerResquests {
     	info2.setPhone("test phone 2");
     	info2.setAddress("test address 2");
     	
-    	__Posts posts = new __Posts();
-    	posts.setId("100");
+    	Posts posts = new Posts();
+    	posts.setId(100);
     	posts.setTitle("title");
     	posts.setAuthor("author");
-    	posts.setInfo(new _Info[]{info1, info2});
+    	//posts.setInfo(new _Info[]{info1, info2});
     	
     	
     	Response resp = given().

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="APITesting.com.org.api.JasonServerResquests">
+      <class name="APITesting.com.org.api.localReq">
         <methods>
-          <include name="test_10"/>
+          <include name="test_update_Post"/>
         </methods>
-      </class> <!-- APITesting.com.org.api.JasonServerResquests -->
+      </class> <!-- APITesting.com.org.api.localReq -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
