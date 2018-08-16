@@ -35,7 +35,8 @@ public class localReq {
 
 	/**
 	 * @author Alok
-	 * @Desscription This method will update JSON db with new record. no duplicated will be allowed.
+	 * @Desscription This method will update JSON db with new record. no duplicated
+	 *               will be allowed.
 	 */
 
 	@Test(enabled = false)
@@ -55,11 +56,12 @@ public class localReq {
 		System.out.println(resp.asString());
 
 	}
-/***
- * @author Alok
- * @Description This method will update an existing record based on id.
- */
-	@Test(enabled = false)
+
+	/***
+	 * @author Alok
+	 * @Description This method will update an existing record based on id.
+	 */
+	@Test(enabled = true)
 
 	public void test_PUT_Req() {
 
@@ -77,16 +79,30 @@ public class localReq {
 		System.out.println(resp.asString());
 
 	}
-	
-	@Test
+
+	@Test(enabled = false)
 	public void updateByPATCHReq() {
-		
-		given().body("{\"title\":\"updated by patch Req by alok\"}").when().contentType(ContentType.JSON).patch("http://localhost:3000/posts/11");
-		
+
+		given().body("{\"title\":\"updated by patch Req by alok\"}").when().contentType(ContentType.JSON)
+				.patch("http://localhost:3000/posts/11");
+
 		Response resp = given().get("http://localhost:3000/posts/");
 
 		System.out.println(resp.getStatusCode());
 		System.out.println(resp.asString());
+
+	}
+	
+	@Test(enabled=true)
+	public void deleteReq() {
+		
+		Response resp=given().when().then().delete("http://localhost:3000/posts/11");
+		
+		System.out.println(resp.getStatusCode());
+		System.out.println(resp.asString());
+		
+		
 		
 	}
+	
 }

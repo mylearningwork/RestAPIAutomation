@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1120" started-at="2018-08-14T12:03:07Z" finished-at="2018-08-14T12:03:09Z">
+  <suite name="Default suite" duration-ms="7206" started-at="2018-08-16T15:58:05Z" finished-at="2018-08-16T15:58:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1120" started-at="2018-08-14T12:03:07Z" finished-at="2018-08-14T12:03:09Z">
-      <class name="APITesting.com.org.api.localReq">
-        <test-method status="PASS" signature="updateByPATCHReq()[pri:0, instance:APITesting.com.org.api.localReq@3bfdc050]" name="updateByPATCHReq" duration-ms="1103" started-at="2018-08-14T17:33:07Z" finished-at="2018-08-14T17:33:09Z">
+    <test name="Default test" duration-ms="7206" started-at="2018-08-16T15:58:05Z" finished-at="2018-08-16T15:58:12Z">
+      <class name="APITesting.com.org.api.postmanReq">
+        <test-method status="PASS" signature="testHeader()[pri:3, instance:APITesting.com.org.api.postmanReq@5e3a8624]" name="testHeader" duration-ms="7155" started-at="2018-08-16T15:58:05Z" finished-at="2018-08-16T15:58:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateByPATCHReq -->
-      </class> <!-- APITesting.com.org.api.localReq -->
+        </test-method> <!-- testHeader -->
+      </class> <!-- APITesting.com.org.api.postmanReq -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
