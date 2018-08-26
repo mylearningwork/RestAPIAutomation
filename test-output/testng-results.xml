@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7206" started-at="2018-08-16T15:58:05Z" finished-at="2018-08-16T15:58:12Z">
+  <suite name="Default suite" duration-ms="3180" started-at="2018-08-26T16:19:27Z" finished-at="2018-08-26T16:19:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7206" started-at="2018-08-16T15:58:05Z" finished-at="2018-08-16T15:58:12Z">
-      <class name="APITesting.com.org.api.postmanReq">
-        <test-method status="PASS" signature="testHeader()[pri:3, instance:APITesting.com.org.api.postmanReq@5e3a8624]" name="testHeader" duration-ms="7155" started-at="2018-08-16T15:58:05Z" finished-at="2018-08-16T15:58:12Z">
+    <test name="Default test" duration-ms="3180" started-at="2018-08-26T16:19:27Z" finished-at="2018-08-26T16:19:30Z">
+      <class name="APITesting.com.org.api.JsonPlaceHolderAPIex">
+        <test-method status="PASS" signature="testPathParam()[pri:0, instance:APITesting.com.org.api.JsonPlaceHolderAPIex@91161c7]" name="testPathParam" duration-ms="3140" started-at="2018-08-26T16:19:27Z" finished-at="2018-08-26T16:19:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testHeader -->
-      </class> <!-- APITesting.com.org.api.postmanReq -->
+        </test-method> <!-- testPathParam -->
+      </class> <!-- APITesting.com.org.api.JsonPlaceHolderAPIex -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

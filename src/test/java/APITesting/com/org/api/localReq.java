@@ -3,7 +3,7 @@
  */
 package APITesting.com.org.api;
 
-import static com.jayway.restassured.RestAssured.given;
+import static com.jayway.restassured.RestAssured.*;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -61,7 +61,7 @@ public class localReq {
 	 * @author Alok
 	 * @Description This method will update an existing record based on id.
 	 */
-	@Test(enabled = true)
+	@Test(enabled = false)
 
 	public void test_PUT_Req() {
 
