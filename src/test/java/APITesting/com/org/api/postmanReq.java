@@ -15,7 +15,7 @@ import static org.hamcrest.Matchers.*;
  */
 public class postmanReq {
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void getResp() {
 
 		Response resp = RestAssured.given().get("https://postman-echo.com/GET");

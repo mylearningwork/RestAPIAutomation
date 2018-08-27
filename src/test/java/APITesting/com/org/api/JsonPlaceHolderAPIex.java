@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 
 import javax.annotation.meta.When;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static com.jayway.restassured.RestAssured.given; // user can directly use given() if imported like this. 
@@ -24,8 +25,18 @@ import static com.jayway.restassured.RestAssured.get;
  * @author Alok
  *
  */
+
+
 @SuppressWarnings("unused")
 public class JsonPlaceHolderAPIex {
+	
+	
+/*	@BeforeClass
+	public void setUp() throws Exception {
+	    RestAssured.port = 8081;
+	}*/
+	
+	
 
 	@Test(enabled = false)
 	public void photos() {
@@ -96,6 +107,7 @@ public class JsonPlaceHolderAPIex {
 
 	}
 
+	// cdata? par n convert to xml . get set params in cdata req resp.
 	@Test(enabled = false)
 	public void logtypes() {
 
@@ -103,13 +115,12 @@ public class JsonPlaceHolderAPIex {
 		 * Log all requests: given().log().all() Log all responses: `when`().log().all()
 		 * Or just when validations fail: `when`().log().ifValidationFails()
 		 */
-
 		given().log().all().get("https://jsonplaceholder.typicode.com/photos");
 		given().get("https://jsonplaceholder.typicode.com/photos").then().log().ifStatusCodeIsEqualTo(200);
 
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void testPathParam() {
 		// https://www.youtube.com/watch?v=4haz0QRTYXw&index=6&list=PLEiBaBxmVLi-hoi61aX-2agQb8EXSCT5f
 		String strUser = "users";
@@ -120,4 +131,43 @@ public class JsonPlaceHolderAPIex {
 
 	}
 
+	@Test(enabled=false)
+	public void setCookie() {
+
+		given().when().cookie("CookieName", "cookieAlok").get("http://www.webservicex.net/price/MSNUM");
+
+	}
+	
+	@Test(enabled=true)
+	public void testBodyParamsInResponse() {
+		
+		// with java 8 lambda expression.
+		
+		RestAssured.given().get("http://jsonplaceholder.typicode.com/photos/1");
+		
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
