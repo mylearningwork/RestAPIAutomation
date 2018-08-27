@@ -15,6 +15,7 @@ import static com.jayway.restassured.RestAssured.given; // user can directly use
 
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.path.json.JsonPath;
 import com.jayway.restassured.response.Cookie;
 import com.jayway.restassured.response.Header;
 import com.jayway.restassured.response.Headers;
@@ -26,17 +27,13 @@ import static com.jayway.restassured.RestAssured.get;
  *
  */
 
-
 @SuppressWarnings("unused")
 public class JsonPlaceHolderAPIex {
-	
-	
-/*	@BeforeClass
-	public void setUp() throws Exception {
-	    RestAssured.port = 8081;
-	}*/
-	
-	
+
+	/*
+	 * @BeforeClass public void setUp() throws Exception { RestAssured.port = 8081;
+	 * }
+	 */
 
 	@Test(enabled = false)
 	public void photos() {
@@ -126,48 +123,65 @@ public class JsonPlaceHolderAPIex {
 		String strUser = "users";
 		int intI = 1;
 
-		given().pathParam("strUser", strUser).pathParam("id", intI)
+		given().log().all().pathParam("strUser", strUser).pathParam("id", intI)
 				.get("https://jsonplaceholder.typicode.com/{strUser}/{id}").then().log().all();
 
 	}
 
-	@Test(enabled=false)
+	@Test(enabled = true)
 	public void setCookie() {
 
 		given().when().cookie("CookieName", "cookieAlok").get("http://www.webservicex.net/price/MSNUM");
+		
+		given().when().log().all().cookie("newCookie", "value1", "value2").get("http://www.webservicex.net/price/MSNUM").then().statusCode(200);
+		
+		//given().when().cookies(cookies)
 
 	}
-	
-	@Test(enabled=true)
+
+	@Test(enabled = false)
 	public void testBodyParamsInResponse() {
-		
-		// with java 8 lambda expression.
-		
-		RestAssured.given().get("http://jsonplaceholder.typicode.com/photos/1");
-		
+
+		// with java 8 lambda expression. not working properly.
+		RestAssured.given().get("http://jsonplaceholder.typicode.com/photos/1").then().log().all();
+
+		/*
+		 * RestAssured.given().get("http://jsonplaceholder.typicode.com/photos/1").then(
+		 * ).body("thumbnailUrl", Response ->
+		 * equalsTo("https://via.placeholder.com/150/92c952") );
+		 */
+		// given().get("http://jsonplaceholder.typicode.com/photos/1").then().body("thumbnailUrl",is(true));
+
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	// http://toolsqa.com/rest-assured/read-response-body-using-rest-assured/
+	@Test(enabled = false)
+	public void jsonPathEx() {
+
+		Response resp = given().get("http://jsonplaceholder.typicode.com/photos");
+
+		resp.then().log().all();
+		JsonPath jpath = resp.jsonPath();// used JSON.to fetch value of keys using
+
+		System.out.println("Title is : " + jpath.get("title"));
+		System.out.println("url is : " + jpath.get("url"));
+
+	}
+
+	@Test(enabled = false)
+	public void testPathParameter() {
+
+		String photosFolder = "photos";
+		String ids = "22";
+		
+		Response resp = given().pathParam("photos", photosFolder).pathParam("id", ids)
+				.get("http://jsonplaceholder.typicode.com/{photos}/{id}");
+
+		resp.then().log().all();
+		resp.jsonPath().get("title");
+		
+		System.out.println(resp.jsonPath().get("title").toString());
+
+	}
+
 }

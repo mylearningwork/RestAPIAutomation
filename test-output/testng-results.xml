@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+<testng-results skipped="0" failed="0" ignored="8" total="9" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3180" started-at="2018-08-26T16:19:27Z" finished-at="2018-08-26T16:19:30Z">
+  <suite name="Default suite" duration-ms="3367" started-at="2018-08-27T17:53:43Z" finished-at="2018-08-27T17:53:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3180" started-at="2018-08-26T16:19:27Z" finished-at="2018-08-26T16:19:30Z">
+    <test name="Default test" duration-ms="3367" started-at="2018-08-27T17:53:43Z" finished-at="2018-08-27T17:53:47Z">
       <class name="APITesting.com.org.api.JsonPlaceHolderAPIex">
-        <test-method status="PASS" signature="testPathParam()[pri:0, instance:APITesting.com.org.api.JsonPlaceHolderAPIex@91161c7]" name="testPathParam" duration-ms="3140" started-at="2018-08-26T16:19:27Z" finished-at="2018-08-26T16:19:30Z">
+        <test-method status="PASS" signature="setCookie()[pri:0, instance:APITesting.com.org.api.JsonPlaceHolderAPIex@604ed9f0]" name="setCookie" duration-ms="3334" started-at="2018-08-27T17:53:43Z" finished-at="2018-08-27T17:53:47Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPathParam -->
+        </test-method> <!-- setCookie -->
       </class> <!-- APITesting.com.org.api.JsonPlaceHolderAPIex -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
