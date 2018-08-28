@@ -5,7 +5,7 @@
     <classes>
       <class name="APITesting.com.org.api.JsonPlaceHolderAPIex">
         <methods>
-          <include name="testPathParam"/>
+          <include name="testJsonPathExpressions"/>
         </methods>
       </class> <!-- APITesting.com.org.api.JsonPlaceHolderAPIex -->
     </classes>

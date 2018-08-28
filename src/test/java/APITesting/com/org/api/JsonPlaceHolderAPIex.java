@@ -128,14 +128,15 @@ public class JsonPlaceHolderAPIex {
 
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void setCookie() {
 
 		given().when().cookie("CookieName", "cookieAlok").get("http://www.webservicex.net/price/MSNUM");
-		
-		given().when().log().all().cookie("newCookie", "value1", "value2").get("http://www.webservicex.net/price/MSNUM").then().statusCode(200);
-		
-		//given().when().cookies(cookies)
+
+		given().when().log().all().cookie("newCookie", "value1", "value2").get("http://www.webservicex.net/price/MSNUM")
+				.then().statusCode(200);
+
+		// given().when().cookies(cookies)
 
 	}
 
@@ -173,15 +174,55 @@ public class JsonPlaceHolderAPIex {
 
 		String photosFolder = "photos";
 		String ids = "22";
-		
+
 		Response resp = given().pathParam("photos", photosFolder).pathParam("id", ids)
 				.get("http://jsonplaceholder.typicode.com/{photos}/{id}");
 
+		given().log().all().pathParam("param1", photosFolder).pathParam("param2", ids)
+				.get("http://jsonplaceholder.typicode.com/{param1}/{param2}").then().log().all();
+
 		resp.then().log().all();
 		resp.jsonPath().get("title");
-		
+
 		System.out.println(resp.jsonPath().get("title").toString());
 
 	}
 
+	@Test(enabled = false)
+	public void testJsonPath() {
+		
+		//http://toolsqa.com/rest-assured/what-is-jsonpath-and-how-to-query-jsonpath/
+		// url used is http://jsonplaceholder.typicode.com/users
+		String resp = given().get("http://jsonplaceholder.typicode.com/users").jsonPath().get("address.geo.lat")
+				.toString();
+
+		String resp1 = given().get("http://jsonplaceholder.typicode.com/users").jsonPath().get("address.geo.lat[0]")
+				.toString();
+		String resplast = given().get("http://jsonplaceholder.typicode.com/users").jsonPath().get("address.geo.lat[-1]")
+				.toString();//-1 will bring last element 
+		
+		String respwildcard = given().get("http://jsonplaceholder.typicode.com/users").jsonPath().get("address[1]")
+				.toString();
+		
+		String respMultipleEle = given().get("http://jsonplaceholder.typicode.com/users").jsonPath().get("address.geo.lat[0,1]")
+				.toString();//will bring 2 elements.
+		
+		System.out.println("All latitudes are " + resp);
+		System.out.println("Latitude at position 0 is : " + resp1);
+		System.out.println("last latitude is : "+resplast);
+		System.out.println("Resp wild card : "+respwildcard);
+		System.out.println("Multiple Elements : "+ respMultipleEle);
+		given().get("http://jsonplaceholder.typicode.com/users").jsonPath().getList("address.geo.lat");
+	}
+
+	
+	@Test
+	public void testJsonPathExpressions() {
+		
+		//given().get("http://jsonplaceholder.typicode.com/users").then().log().all();
+		Response resp=given().get("http://jsonplaceholder.typicode.com/users");
+		// $.books[?(@.pages > 460)]
+		System.out.println(resp.jsonPath().get("address[?(@.zipcode > 9)]").toString()); // not working
+		//[?(@.city==McKenziehaven)]
+	}
 }
