@@ -3,6 +3,7 @@
  */
 package APITesting.com.org.api;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -35,7 +36,8 @@ public class JsonPlaceHolderAPIex {
 	 * }
 	 */
 
-	@Test(enabled = false)
+	@Test(enabled = false
+			)
 	public void photos() {
 
 		Response resp = given().get("https://jsonplaceholder.typicode.com/photos");
@@ -94,6 +96,7 @@ public class JsonPlaceHolderAPIex {
 		System.out.println("Expiry date of cookie is : " + resp.getDetailedCookie("__cfduid").getExpiryDate()
 				+ resp.getDetailedCookie("__cfduid").getDomain() + resp.getDetailedCookie("__cfduid").getName());
 
+		resp.getDetailedCookie("__cfduid").getVersion();
 	}
 
 	@Test(enabled = false)
@@ -216,7 +219,7 @@ public class JsonPlaceHolderAPIex {
 	}
 
 	
-	@Test
+	@Test(enabled=false)
 	public void testJsonPathExpressions() {
 		
 		//given().get("http://jsonplaceholder.typicode.com/users").then().log().all();
@@ -225,4 +228,48 @@ public class JsonPlaceHolderAPIex {
 		System.out.println(resp.jsonPath().get("address[?(@.zipcode > 9)]").toString()); // not working
 		//[?(@.city==McKenziehaven)]
 	}
+	
+	@Test(enabled=true)
+	
+	public void testPracticeEx() {
+		
+	//Response resp=	given().then().log().all().get("http://jsonplaceholder.typicode.com/users");
+	
+	Response resp=	given().get("http://jsonplaceholder.typicode.com/users");
+	
+	//resp.then().log().all();
+	
+	String header=resp.getHeader("Connection");
+	
+	System.out.println(header);
+		
+	System.out.println(resp.then().contentType(ContentType.JSON));	
+	
+	System.out.println(resp.contentType());
+	
+	System.out.println(resp.getStatusCode());
+	
+	resp.then().assertThat().contentType(ContentType.JSON);
+	
+	System.out.println(resp.jsonPath().get("id").toString());
+	
+	
+	System.out.println(resp.jsonPath().get("address[1]").toString());
+	System.out.println(resp.jsonPath().get("address[1].zipcode").toString());
+	
+	System.out.println(resp.jsonPath().get("address[1].geo").toString());
+	System.out.println(resp.jsonPath().get("address[1].geo.lat").toString()); // will print lat of 1st address entry.
+	
+	System.out.println(resp.jsonPath().getList("address"));
+	
+	List<Object> list= resp.jsonPath().getList("address");  
+	
+	System.out.println(list.get(0)); //will print 1st element.
+	
+	
+	
+	
+	}
+	
+	
 }
