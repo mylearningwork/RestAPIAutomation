@@ -6,6 +6,7 @@ package APITesting.com.org.api;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.jayway.restassured.RestAssured;
@@ -34,20 +35,40 @@ public class GoogleAPI {
 		params.put("name", "cruise");
 		params.put("key", "AIzaSyA3ku1r7Sbw_j-bnmtIcE12G6ZzZe5wWtQ");
 
-		/*Response resp = RestAssured.given().queryParam("location", "-33.8670,151.1957").queryParam("radius", 500)
-				.queryParam("types", "food").queryParam("name", "cruise")
-				.queryParam("key", "AIzaSyA3ku1r7Sbw_j-bnmtIcE12G6ZzZe5wWtQ").get(url1);*/
+		/*
+		 * Response resp = RestAssured.given().queryParam("location",
+		 * "-33.8670,151.1957").queryParam("radius", 500) .queryParam("types",
+		 * "food").queryParam("name", "cruise") .queryParam("key",
+		 * "AIzaSyA3ku1r7Sbw_j-bnmtIcE12G6ZzZe5wWtQ").get(url1);
+		 */
 		// .get(url).then().statusCode(200);
 		Response resp1 = RestAssured.given().queryParameters(params).get(url1);
 
-		//resp1.then().statusCode(200).contentType(ContentType.JSON).assertThat().header(headerName, expectedValue)
+		// System.out.println(RestAssured.given().queryParameters(params).get(url1).thenReturn().contentType());
+		// resp1.then().statusCode(200).contentType(ContentType.JSON).assertThat().header(headerName,
+		// expectedValue)
 
-		System.out.println(resp1.asString());
-		System.out.println(resp1.getContentType());
+		// System.out.println(resp1.asString());
+		// System.out.println(resp1.getContentType());
 		// System.out.println(resp.body());
 		// System.out.println(resp.getStatusCode());
 
-		System.out.println(resp1);
+		// System.out.println(resp1);
+
+		// System.out.println(resp1.getHeaders());
+
+		// resp1.then().assertThat().header("Pragma", "no-cach8e");
+		// resp1.then().statusCode(200).and().header("Pragma",
+		// "no-cache").and().contentType(ContentType.JSON).assertThat().statusCode(200);
+
+		System.out.println(resp1.then().assertThat().statusCode(200));
+
+		System.out.println(resp1.getStatusCode());
+
+		Assert.assertTrue(resp1.getStatusCode() == 200);
+
+		System.out.println(resp1.getTime());
+
 	}
 
 }
