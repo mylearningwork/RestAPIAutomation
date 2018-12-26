@@ -103,12 +103,12 @@ public class WheatherGetRequests {
 				.when().get("http://api.openweathermap.org/data/2.5/weather").then().contentType(ContentType.JSON)
 				.extract().path("weather[0].description");
 
-		String resp2=given().parameter("id", "2172797").parameter("appid", "673c5650a20311041c26d61291b186ae").when()
+		String resp2 = given().parameter("id", "2172797").parameter("appid", "673c5650a20311041c26d61291b186ae").when()
 				.get("http://api.openweathermap.org/data/2.5/weather").jsonPath().get("weather[0].description");
 
 		System.out.println("wheather report : " + weatherReport);
 
-		System.out.println("Weather report in another ways is : "+ resp2);
+		System.out.println("Weather report in another ways is : " + resp2);
 	}
 
 	// @Test
@@ -128,7 +128,7 @@ public class WheatherGetRequests {
 
 	}
 
-	//@Test
+	// @Test
 	public void test_10() {
 
 		Response resp = given().parameter("id", "2172797").parameter("appid", "673c5650a20311041c26d61291b186ae").when()
@@ -150,7 +150,8 @@ public class WheatherGetRequests {
 				.parameter("appid", "673c5650a20311041c26d61291b186ae").when()
 				.get("http://api.openweathermap.org/data/2.5/weather").then().contentType(ContentType.JSON).extract()
 				.path("weather[0].description");
-
+		// https://stackoverflow.com/questions/9534602/what-is-the-difference-between-digest-and-basic-authentication
+	//	given().authentication().basic("Alok", "Rai");
 		System.out.println("report by coordinates : " + reportbyCoordinates);
 
 		Assert.assertEquals(reportbyID, reportbyCoordinates);

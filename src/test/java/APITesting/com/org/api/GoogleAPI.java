@@ -42,15 +42,20 @@ public class GoogleAPI {
 		 * "AIzaSyA3ku1r7Sbw_j-bnmtIcE12G6ZzZe5wWtQ").get(url1);
 		 */
 		// .get(url).then().statusCode(200);
-		Response resp1 = RestAssured.given().queryParameters(params).get(url1);
+		Response resp1 = RestAssured.given().log().everything().queryParameters(params).get(url1);
 
+		// System.out.println(resp1.getBody().asString());
+
+		// System.out.println(resp1.getBody().asString().toUpperCase());
+
+		// System.out.println(resp1.asString());
 		// System.out.println(RestAssured.given().queryParameters(params).get(url1).thenReturn().contentType());
 		// resp1.then().statusCode(200).contentType(ContentType.JSON).assertThat().header(headerName,
 		// expectedValue)
 
 		// System.out.println(resp1.asString());
 		// System.out.println(resp1.getContentType());
-		// System.out.println(resp.body());
+		// System.out.println(resp1.body().asString());
 		// System.out.println(resp.getStatusCode());
 
 		// System.out.println(resp1);
@@ -61,14 +66,26 @@ public class GoogleAPI {
 		// resp1.then().statusCode(200).and().header("Pragma",
 		// "no-cache").and().contentType(ContentType.JSON).assertThat().statusCode(200);
 
-		System.out.println(resp1.then().assertThat().statusCode(200));
+		// System.out.println(resp1.then().assertThat().statusCode(200));
 
-		System.out.println(resp1.getStatusCode());
+		// System.out.println(resp1.getStatusCode());
 
-		Assert.assertTrue(resp1.getStatusCode() == 200);
+		// Assert.assertTrue(resp1.getStatusCode() == 200);
+		//https://github.com/rest-assured/rest-assured/wiki/Usage
+		
+		System.out.println("response time is .." + resp1.getTime());
+		System.out.println("...............");
+		System.out.println(resp1.getHeaders());
+		System.out.println("...............");
+		System.out.println(resp1.getStatusLine());
 
-		System.out.println(resp1.getTime());
+		Assert.assertTrue(resp1.body().asString().contains("html_attributions"));
 
+		//resp1.body().prettyPrint();
+		// resp1.then().b
+		System.out.println(resp1.jsonPath().get("status").toString());
+		System.out.println("++++++++++++++++++++");
+		System.out.println(resp1.then().extract().jsonPath().get("status").toString());
 	}
 
 }

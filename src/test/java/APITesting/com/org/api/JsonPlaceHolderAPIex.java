@@ -36,8 +36,7 @@ public class JsonPlaceHolderAPIex {
 	 * }
 	 */
 
-	@Test(enabled = false
-			)
+	@Test(enabled = false)
 	public void photos() {
 
 		Response resp = given().get("https://jsonplaceholder.typicode.com/photos");
@@ -193,8 +192,8 @@ public class JsonPlaceHolderAPIex {
 
 	@Test(enabled = false)
 	public void testJsonPath() {
-		
-		//http://toolsqa.com/rest-assured/what-is-jsonpath-and-how-to-query-jsonpath/
+
+		// http://toolsqa.com/rest-assured/what-is-jsonpath-and-how-to-query-jsonpath/
 		// url used is http://jsonplaceholder.typicode.com/users
 		String resp = given().get("http://jsonplaceholder.typicode.com/users").jsonPath().get("address.geo.lat")
 				.toString();
@@ -202,74 +201,70 @@ public class JsonPlaceHolderAPIex {
 		String resp1 = given().get("http://jsonplaceholder.typicode.com/users").jsonPath().get("address.geo.lat[0]")
 				.toString();
 		String resplast = given().get("http://jsonplaceholder.typicode.com/users").jsonPath().get("address.geo.lat[-1]")
-				.toString();//-1 will bring last element 
-		
+				.toString();// -1 will bring last element
+
 		String respwildcard = given().get("http://jsonplaceholder.typicode.com/users").jsonPath().get("address[1]")
 				.toString();
-		
-		String respMultipleEle = given().get("http://jsonplaceholder.typicode.com/users").jsonPath().get("address.geo.lat[0,1]")
-				.toString();//will bring 2 elements.
-		
+
+		String respMultipleEle = given().get("http://jsonplaceholder.typicode.com/users").jsonPath()
+				.get("address.geo.lat[0,1]").toString();// will bring 2 elements.
+
 		System.out.println("All latitudes are " + resp);
 		System.out.println("Latitude at position 0 is : " + resp1);
-		System.out.println("last latitude is : "+resplast);
-		System.out.println("Resp wild card : "+respwildcard);
-		System.out.println("Multiple Elements : "+ respMultipleEle);
+		System.out.println("last latitude is : " + resplast);
+		System.out.println("Resp wild card : " + respwildcard);
+		System.out.println("Multiple Elements : " + respMultipleEle);
 		given().get("http://jsonplaceholder.typicode.com/users").jsonPath().getList("address.geo.lat");
 	}
 
-	
-	@Test(enabled=false)
+	@Test(enabled = false)
 	public void testJsonPathExpressions() {
-		
-		//given().get("http://jsonplaceholder.typicode.com/users").then().log().all();
-		Response resp=given().get("http://jsonplaceholder.typicode.com/users");
+
+		// given().get("http://jsonplaceholder.typicode.com/users").then().log().all();
+		Response resp = given().get("http://jsonplaceholder.typicode.com/users");
 		// $.books[?(@.pages > 460)]
 		System.out.println(resp.jsonPath().get("address[?(@.zipcode > 9)]").toString()); // not working
-		//[?(@.city==McKenziehaven)]
+		// [?(@.city==McKenziehaven)]
 	}
-	
-	@Test(enabled=true)
-	
+
+	@Test(enabled = true)
+
 	public void testPracticeEx() {
-		
-	//Response resp=	given().then().log().all().get("http://jsonplaceholder.typicode.com/users");
-	
-	Response resp=	given().get("http://jsonplaceholder.typicode.com/users");
-	
-	//resp.then().log().all();
-	
-	String header=resp.getHeader("Connection");
-	
-	System.out.println(header);
-		
-	System.out.println(resp.then().contentType(ContentType.JSON));	
-	
-	System.out.println(resp.contentType());
-	
-	System.out.println(resp.getStatusCode());
-	
-	resp.then().assertThat().contentType(ContentType.JSON);
-	
-	System.out.println(resp.jsonPath().get("id").toString());
-	
-	
-	System.out.println(resp.jsonPath().get("address[1]").toString());
-	System.out.println(resp.jsonPath().get("address[1].zipcode").toString());
-	
-	System.out.println(resp.jsonPath().get("address[1].geo").toString());
-	System.out.println(resp.jsonPath().get("address[1].geo.lat").toString()); // will print lat of 1st address entry.
-	
-	System.out.println(resp.jsonPath().getList("address"));
-	
-	List<Object> list= resp.jsonPath().getList("address");  
-	
-	System.out.println(list.get(0)); //will print 1st element.
-	
-	
-	
-	
+
+		// Response resp=
+		// given().then().log().all().get("http://jsonplaceholder.typicode.com/users");
+
+		Response resp = given().get("http://jsonplaceholder.typicode.com/users");
+
+		// resp.then().log().all();
+
+		String header = resp.getHeader("Connection");
+
+		System.out.println(header);
+
+		System.out.println(resp.then().contentType(ContentType.JSON));
+
+		System.out.println(resp.contentType());
+
+		System.out.println(resp.getStatusCode());
+
+		resp.then().assertThat().contentType(ContentType.JSON);
+
+		System.out.println(resp.jsonPath().get("id").toString());
+
+		System.out.println(resp.jsonPath().get("address[1]").toString());
+		System.out.println(resp.jsonPath().get("address[1].zipcode").toString());
+
+		System.out.println(resp.jsonPath().get("address[1].geo").toString());
+		System.out.println(resp.jsonPath().get("address[1].geo.lat").toString()); // will print lat of 1st address
+																					// entry.
+
+		System.out.println(resp.jsonPath().getList("address"));
+
+		List<Object> list = resp.jsonPath().getList("address");
+
+		System.out.println(list.get(0)); // will print 1st element.
+
 	}
-	
-	
+
 }

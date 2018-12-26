@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="APITesting.com.org.api.JsonPlaceHolderAPIex">
+      <class name="APITesting.com.org.api.GoogleAPI">
         <methods>
-          <include name="testJsonPathExpressions"/>
+          <include name="validateGoogleResp"/>
         </methods>
-      </class> <!-- APITesting.com.org.api.JsonPlaceHolderAPIex -->
+      </class> <!-- APITesting.com.org.api.GoogleAPI -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

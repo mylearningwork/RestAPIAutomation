@@ -41,7 +41,6 @@ public class JasonServerResquests {
 						contentType(ContentType.JSON).
 						post("http://localhost:3000/posts");
 
-
 		System.out.println(resp.asString());
 	}
 

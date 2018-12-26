@@ -1,17 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3757" started-at="2018-09-02T14:30:15Z" finished-at="2018-09-02T14:30:18Z">
+  <suite name="Default suite" duration-ms="1235" started-at="2018-12-25T12:20:11Z" finished-at="2018-12-25T12:20:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3757" started-at="2018-09-02T14:30:15Z" finished-at="2018-09-02T14:30:18Z">
-      <class name="APITesting.com.org.api.WheatherGetRequests">
-        <test-method status="PASS" signature="Test_08()[pri:0, instance:APITesting.com.org.api.WheatherGetRequests@91161c7]" name="Test_08" duration-ms="3726" started-at="2018-09-02T14:30:15Z" finished-at="2018-09-02T14:30:18Z">
+    <test name="Default test" duration-ms="1235" started-at="2018-12-25T12:20:11Z" finished-at="2018-12-25T12:20:13Z">
+      <class name="APITesting.com.org.api.GoogleAPI">
+        <test-method status="FAIL" signature="validateGoogleResp()[pri:0, instance:APITesting.com.org.api.GoogleAPI@91161c7]" name="validateGoogleResp" duration-ms="1188" started-at="2018-12-25T12:20:11Z" finished-at="2018-12-25T12:20:13Z">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Invalid number of path parameters. Expected 0, was 5. Redundant path parameters are: types=food, name=cruise, location=-33.8670,151.1957, radius=500, key=AIzaSyA3ku1r7Sbw_j-bnmtIcE12G6ZzZe5wWtQ.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Invalid number of path parameters. Expected 0, was 5. Redundant path parameters are: types=food, name=cruise, location=-33.8670,151.1957, radius=500, key=AIzaSyA3ku1r7Sbw_j-bnmtIcE12G6ZzZe5wWtQ.
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:60)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:235)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
+at com.jayway.restassured.internal.RequestSpecificationImpl.assertCorrectNumberOfPathParams(RequestSpecificationImpl.groovy:1226)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+at com.jayway.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:158)
+at com.jayway.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1111)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+at com.jayway.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:149)
+at com.jayway.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)
+at com.jayway.restassured.filter.Filter$filter$0.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+at com.jayway.restassured.filter.Filter$filter.call(Unknown Source)
+at com.jayway.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:73)
+at com.jayway.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)
+at com.jayway.restassured.filter.Filter$filter.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+at com.jayway.restassured.filter.Filter$filter.call(Unknown Source)
+at com.jayway.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:73)
+at com.jayway.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:101)
+at com.jayway.restassured.filter.Filter$filter.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)
+at com.jayway.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:73)
+at com.jayway.restassured.filter.FilterContext$next.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:133)
+at com.jayway.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1596)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+at com.jayway.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)
+at com.jayway.restassured.internal.RequestSpecificationImpl.get(RequestSpecificationImpl.groovy:160)
+at com.jayway.restassured.internal.RequestSpecificationImpl.get(RequestSpecificationImpl.groovy)
+at APITesting.com.org.api.GoogleAPI.validateGoogleResp(GoogleAPI.java:45)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test_08 -->
-      </class> <!-- APITesting.com.org.api.WheatherGetRequests -->
+        </test-method> <!-- validateGoogleResp -->
+      </class> <!-- APITesting.com.org.api.GoogleAPI -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
