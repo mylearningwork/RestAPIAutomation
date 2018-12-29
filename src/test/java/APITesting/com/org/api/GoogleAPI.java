@@ -6,8 +6,12 @@ package APITesting.com.org.api;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.plaf.synth.SynthStyle;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static com.jayway.restassured.RestAssured.*;
 
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
@@ -23,7 +27,7 @@ public class GoogleAPI {
 
 	String url1 = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 
-	@Test
+	@Test(enabled = false)
 
 	public void validateGoogleResp() {
 
@@ -71,8 +75,8 @@ public class GoogleAPI {
 		// System.out.println(resp1.getStatusCode());
 
 		// Assert.assertTrue(resp1.getStatusCode() == 200);
-		//https://github.com/rest-assured/rest-assured/wiki/Usage
-		
+		// https://github.com/rest-assured/rest-assured/wiki/Usage
+
 		System.out.println("response time is .." + resp1.getTime());
 		System.out.println("...............");
 		System.out.println(resp1.getHeaders());
@@ -81,11 +85,23 @@ public class GoogleAPI {
 
 		Assert.assertTrue(resp1.body().asString().contains("html_attributions"));
 
-		//resp1.body().prettyPrint();
+		// resp1.body().prettyPrint();
 		// resp1.then().b
 		System.out.println(resp1.jsonPath().get("status").toString());
 		System.out.println("++++++++++++++++++++");
 		System.out.println(resp1.then().extract().jsonPath().get("status").toString());
 	}
 
+	@Test(enabled = true)
+	public void testGoogleResp() {
+
+	//	given().log().everything().get(url).then().log().all();
+
+		//given().options(url).then().log().all();
+		//given().patch(url).then().log().all();
+		given().given().get(url).then().log().all();
+		// System.out.pr.thintln(RestAssured.options(url).toString());
+		// System.out.println(RestAssured.put((url)));
+
+	}
 }
