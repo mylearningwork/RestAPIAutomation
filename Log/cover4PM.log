@@ -1,0 +1,6 @@
+2019-01-01 22:42:58,153 - utilities.TestBase -INFO - ***** Test case execution of Class com.testPages.postmanReqstarted******
+2019-01-01 22:42:58,184 - utilities.TestBase -INFO - testStatusCode test started
+2019-01-01 22:43:03,317 - utilities.TestBase -INFO - Message: Status code is : 200
+2019-01-01 22:43:03,317 - utilities.TestBase -INFO - Message: Actual string: [ 200 ] is matching with Expected string: [ 200 ]
+2019-01-01 22:43:03,536 - utilities.TestBase -INFO - ***************All test cases of Class com.testPages.postmanReq executed******
+2019-01-01 22:43:05,400 - utilities.TestBase -INFO - *********** All test classes run. Extent report generated and put in : D:\Users\Alok\git\RestAPICode\extentReports .Quitting browser**********
