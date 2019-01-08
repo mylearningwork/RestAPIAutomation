@@ -26,10 +26,11 @@ public class postmanReq extends TestBase {
 	// https://stackoverflow.com/questions/52208765/rest-assured-how-to-pass-object-in-jsonobject-body
 	@Test(priority = 1, enabled = true)
 	public void testStatusCode() {
+		
 		RestAssured.given().get("https://postman-echo.com/GET").then().statusCode(200);
 		Response resp = RestAssured.given().get("https://postman-echo.com/GET");
 		Utils.assertIfEqual(Utils.getStatusCode(resp),200);
-		resp.then().assertThat().statusLine(isEmptyOrNullString());
+		//resp.then().assertThat().statusLine(isEmptyOrNullString());
 		resp.getBody().prettyPeek();
 		
 		

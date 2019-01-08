@@ -22,6 +22,9 @@ import com.jayway.restassured.response.Cookie;
 import com.jayway.restassured.response.Header;
 import com.jayway.restassured.response.Headers;
 import com.jayway.restassured.response.Response;
+
+import utilities.TestBase;
+
 import static com.jayway.restassured.RestAssured.get;
 
 /**
@@ -30,14 +33,14 @@ import static com.jayway.restassured.RestAssured.get;
  */
 
 @SuppressWarnings("unused")
-public class JsonPlaceHolderAPIex {
+public class JsonPlaceHolderAPIex extends TestBase {
 
 	/*
 	 * @BeforeClass public void setUp() throws Exception { RestAssured.port = 8081;
 	 * }
 	 */
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void photos() {
 
 		Response resp = given().get("https://jsonplaceholder.typicode.com/photos");
@@ -76,7 +79,7 @@ public class JsonPlaceHolderAPIex {
 
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 
 	public void getCookies() {
 
@@ -120,7 +123,7 @@ public class JsonPlaceHolderAPIex {
 
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void testPathParam() {
 		// https://www.youtube.com/watch?v=4haz0QRTYXw&index=6&list=PLEiBaBxmVLi-hoi61aX-2agQb8EXSCT5f
 		String strUser = "users";
@@ -131,7 +134,7 @@ public class JsonPlaceHolderAPIex {
 
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void setCookie() {
 
 		given().when().cookie("CookieName", "cookieAlok").get("http://www.webservicex.net/price/MSNUM");
@@ -159,7 +162,7 @@ public class JsonPlaceHolderAPIex {
 	}
 
 	// http://toolsqa.com/rest-assured/read-response-body-using-rest-assured/
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void jsonPathEx() {
 
 		Response resp = given().get("http://jsonplaceholder.typicode.com/photos");
@@ -172,7 +175,7 @@ public class JsonPlaceHolderAPIex {
 
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void testPathParameter() {
 
 		String photosFolder = "photos";
@@ -191,7 +194,7 @@ public class JsonPlaceHolderAPIex {
 
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void testJsonPath() {
 
 		// http://toolsqa.com/rest-assured/what-is-jsonpath-and-how-to-query-jsonpath/
